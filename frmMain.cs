@@ -57,5 +57,26 @@ namespace DBPROJECT
             this.glSetSizeToDesktop();
             this.BringToFront();
         }
+
+        private void systemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ChangePasswordfrm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ChangePasswordfrm.Dispose();
+        }
+
+
+        private frmChangePassword ChangePasswordfrm;
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePasswordfrm = new frmChangePassword(Globals.gIdUser, Globals.gLoginName);
+            ChangePasswordfrm.FormClosed += ChangePasswordfrm_FormClosed;
+
+            ChangePasswordfrm.ShowDialog();
+        }
     }
 }
