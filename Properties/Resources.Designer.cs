@@ -63,9 +63,79 @@ namespace DBPROJECT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ACCOUNT {
+            get {
+                object obj = ResourceManager.GetObject("ACCOUNT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap camera_icon_39 {
+            get {
+                object obj = ResourceManager.GetObject("camera-icon-39", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clear_icon_9196 {
+            get {
+                object obj = ResourceManager.GetObject("clear-icon-9196", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_button_png_30227___5x5 {
+            get {
+                object obj = ResourceManager.GetObject("close-button-png-30227 - 5x5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_button_png_30227___6x6 {
+            get {
+                object obj = ResourceManager.GetObject("close-button-png-30227 - 6x6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap forgot_password_icon_18359___10x10 {
             get {
                 object obj = ResourceManager.GetObject("forgot-password-icon-18359 - 10x10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap group_png_3236 {
+            get {
+                object obj = ResourceManager.GetObject("group-png-3236", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap profile_icon_png_897 {
+            get {
+                object obj = ResourceManager.GetObject("profile-icon-png-897", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
