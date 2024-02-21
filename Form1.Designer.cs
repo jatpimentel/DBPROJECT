@@ -199,7 +199,7 @@ namespace DBPROJECT
             // btnClear
             // 
             this.btnClear.Image = global::DBPROJECT.Properties.Resources.close_button_png_30227___5x5;
-            this.btnClear.Location = new System.Drawing.Point(349, 287);
+            this.btnClear.Location = new System.Drawing.Point(359, 287);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(113, 39);
             this.btnClear.TabIndex = 1;
