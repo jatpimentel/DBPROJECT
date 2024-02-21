@@ -123,6 +123,16 @@ namespace DBPROJECT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap forgot_password_icon_18359___5x5___Copy {
+            get {
+                object obj = ResourceManager.GetObject("forgot-password-icon-18359 - 5x5 - Copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap group_png_3236 {
             get {
                 object obj = ResourceManager.GetObject("group-png-3236", resourceCulture);
@@ -136,6 +146,26 @@ namespace DBPROJECT.Properties {
         internal static System.Drawing.Bitmap profile_icon_png_897 {
             get {
                 object obj = ResourceManager.GetObject("profile-icon-png-897", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REFRESH1___Copy__2_ {
+            get {
+                object obj = ResourceManager.GetObject("REFRESH1 - Copy (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save_icon_5402___Small {
+            get {
+                object obj = ResourceManager.GetObject("save-icon-5402 - Small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

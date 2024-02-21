@@ -10,11 +10,15 @@ using System.Windows.Forms;
 
 namespace DBPROJECT
 {
-    public partial class Form1 : Form
+    public partial class frmUserProfile : Form
     {
-        public Form1()
+        long iduser;
+        String loginname;
+        public frmUserProfile(long liduser, String lname)
         {
             InitializeComponent();
+            this.iduser = liduser;
+            this.loginname = lname;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -61,5 +65,28 @@ namespace DBPROJECT
         {
 
         }
+
+        private void ChangePasswordfrm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ChangePasswordfrm.Dispose();
+        }
+
+
+        private frmChangePassword ChangePasswordfrm;
+        private void btnChangePwd_Click(object sender, EventArgs e)
+        {
+            ChangePasswordfrm = new frmChangePassword(this.iduser, this.loginname);
+            ChangePasswordfrm.FormClosed += ChangePasswordfrm_FormClosed;
+
+            ChangePasswordfrm.ShowDialog();
+        }
+
+        private void frmUserProfile_LoadUserData()
+        {
+            String uname = "", uemail = "", ugender = "MALE", usmtphost = "", usmtpport = "";
+            DateTime ubirthdate = Convert.ToDateTime("01/01/1900");
+        }
     }
+
+    
 }

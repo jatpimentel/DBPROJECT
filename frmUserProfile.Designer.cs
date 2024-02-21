@@ -1,7 +1,7 @@
 ﻿
 namespace DBPROJECT
 {
-    partial class Form1
+    partial class frmUserProfile
     {
         /// <summary>
         /// Required designer variable.
@@ -41,10 +41,10 @@ namespace DBPROJECT
             this.txtSMTPport = new System.Windows.Forms.TextBox();
             this.pkrBirthdate = new System.Windows.Forms.DateTimePicker();
             this.cbxGender = new System.Windows.Forms.ComboBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnChangePwd = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.picBoxUser = new System.Windows.Forms.PictureBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnChangePwd = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnLoadPhoto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxUser)).BeginInit();
@@ -58,7 +58,6 @@ namespace DBPROJECT
             this.label1.Size = new System.Drawing.Size(64, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Login Name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -77,7 +76,6 @@ namespace DBPROJECT
             this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "SMTP Host";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -87,7 +85,6 @@ namespace DBPROJECT
             this.label4.Size = new System.Drawing.Size(59, 13);
             this.label4.TabIndex = 5;
             this.label4.Text = "SMTP Port";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -97,7 +94,6 @@ namespace DBPROJECT
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 6;
             this.label5.Text = "Birthdate";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -107,7 +103,6 @@ namespace DBPROJECT
             this.label6.Size = new System.Drawing.Size(42, 13);
             this.label6.TabIndex = 7;
             this.label6.Text = "Gender";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtLoginName
             // 
@@ -152,40 +147,13 @@ namespace DBPROJECT
             // 
             this.cbxGender.FormattingEnabled = true;
             this.cbxGender.Items.AddRange(new object[] {
-            "MALE",
-            "FEMALE"});
+            "FEMALE",
+            "MALE"});
             this.cbxGender.Location = new System.Drawing.Point(189, 485);
             this.cbxGender.Name = "cbxGender";
             this.cbxGender.Size = new System.Drawing.Size(121, 21);
             this.cbxGender.TabIndex = 13;
             this.cbxGender.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(306, 520);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 14;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // btnChangePwd
-            // 
-            this.btnChangePwd.Location = new System.Drawing.Point(110, 520);
-            this.btnChangePwd.Name = "btnChangePwd";
-            this.btnChangePwd.Size = new System.Drawing.Size(136, 23);
-            this.btnChangePwd.TabIndex = 15;
-            this.btnChangePwd.Text = "Change UserPasswrord";
-            this.btnChangePwd.UseVisualStyleBackColor = true;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(387, 520);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnRefresh.TabIndex = 16;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
             // 
             // picBoxUser
             // 
@@ -195,6 +163,40 @@ namespace DBPROJECT
             this.picBoxUser.Size = new System.Drawing.Size(255, 269);
             this.picBoxUser.TabIndex = 17;
             this.picBoxUser.TabStop = false;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Image = global::DBPROJECT.Properties.Resources.REFRESH1___Copy__2_;
+            this.btnRefresh.Location = new System.Drawing.Point(387, 520);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 16;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            // 
+            // btnChangePwd
+            // 
+            this.btnChangePwd.Image = global::DBPROJECT.Properties.Resources.forgot_password_icon_18359___5x5___Copy;
+            this.btnChangePwd.Location = new System.Drawing.Point(110, 520);
+            this.btnChangePwd.Name = "btnChangePwd";
+            this.btnChangePwd.Size = new System.Drawing.Size(149, 23);
+            this.btnChangePwd.TabIndex = 15;
+            this.btnChangePwd.Text = "Change UserPasswrord";
+            this.btnChangePwd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnChangePwd.UseVisualStyleBackColor = true;
+            this.btnChangePwd.Click += new System.EventHandler(this.btnChangePwd_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Image = global::DBPROJECT.Properties.Resources.save_icon_5402___Small;
+            this.btnSave.Location = new System.Drawing.Point(306, 520);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 14;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // btnClear
             // 
@@ -220,7 +222,7 @@ namespace DBPROJECT
             this.btnLoadPhoto.UseVisualStyleBackColor = true;
             this.btnLoadPhoto.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // frmUserProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -243,8 +245,9 @@ namespace DBPROJECT
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnLoadPhoto);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmUserProfile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "User Profile";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxUser)).EndInit();
             this.ResumeLayout(false);
