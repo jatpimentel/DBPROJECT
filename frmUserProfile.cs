@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +30,7 @@ namespace DBPROJECT
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            this.frmUserProfile_LoadUserData();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -83,10 +85,58 @@ namespace DBPROJECT
 
         private void frmUserProfile_LoadUserData()
         {
-            String uname = "", uemail = "", ugender = "MALE", usmtphost = "", usmtpport = "";
-            DateTime ubirthdate = Convert.ToDateTime("01/01/1900");
+       //     String uname = "", uemail = "", ugender = "MALE", usmtphost = "", usmtpport = "";
+        //    DateTime ubirthdate = Convert.ToDateTime("01/01/1900");
+
+            if (Globals.glOpenSqlConn())
+            {
+                SqlCommand cmd = new SqlCommand("select photo from users where iduser=@liduser", Globals.sqlconn);
+                cmd.Parameters.AddWithValue("@lidUser", this.iduser);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                int rowcount = dt.Rows.Count;
+
+                if (rowcount == 0)
+                {
+                    csMessageBox.Show("Invalid User Id", "Warning",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    if(dt.Rows != null)
+                    {
+                        byte[] UserImg = (byte[])dt.Rows[0][0];
+                        MemoryStream imgstream = new MemoryStream(UserImg);
+
+                        if (imgstream.Length > 0)
+                            this.picBoxUser.Image = Image.FromStream(imgstream);
+                    }
+                    da.Dispose();
+                }
+            }
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            if (csMessageBox.Show("Erase User Photo?", "Please confirm.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if(Globals.glOpenSqlConn())
+                {
+                    SqlCommand cmd = new SqlCommand("spGetUserProfile", Globals.sqlconn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@liduser", this.iduser);
+                    cmd.ExecuteNonQuery();
+
+                    this.picBoxUser.Image = null;
+                }
+                csMessageBox.Show("User Photo Erased", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
-
-    
 }
