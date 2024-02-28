@@ -41,13 +41,13 @@ namespace DBPROJECT
             this.txtSMTPport = new System.Windows.Forms.TextBox();
             this.pkrBirthdate = new System.Windows.Forms.DateTimePicker();
             this.cbxGender = new System.Windows.Forms.ComboBox();
-            this.picBoxUser = new System.Windows.Forms.PictureBox();
+            this.pictBoxUser = new System.Windows.Forms.PictureBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnChangePwd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnLoadPhoto = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictBoxUser)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -118,6 +118,7 @@ namespace DBPROJECT
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(273, 20);
             this.txtEmail.TabIndex = 9;
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnableSavebutton);
             // 
             // txtSMTPHOST
             // 
@@ -125,6 +126,7 @@ namespace DBPROJECT
             this.txtSMTPHOST.Name = "txtSMTPHOST";
             this.txtSMTPHOST.Size = new System.Drawing.Size(273, 20);
             this.txtSMTPHOST.TabIndex = 10;
+            this.txtSMTPHOST.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnableSavebutton);
             // 
             // txtSMTPport
             // 
@@ -132,6 +134,7 @@ namespace DBPROJECT
             this.txtSMTPport.Name = "txtSMTPport";
             this.txtSMTPport.Size = new System.Drawing.Size(273, 20);
             this.txtSMTPport.TabIndex = 11;
+            this.txtSMTPport.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnableSavebutton);
             // 
             // pkrBirthdate
             // 
@@ -142,6 +145,7 @@ namespace DBPROJECT
             this.pkrBirthdate.Size = new System.Drawing.Size(121, 20);
             this.pkrBirthdate.TabIndex = 12;
             this.pkrBirthdate.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.pkrBirthdate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnableSavebutton);
             // 
             // cbxGender
             // 
@@ -154,15 +158,16 @@ namespace DBPROJECT
             this.cbxGender.Size = new System.Drawing.Size(121, 21);
             this.cbxGender.TabIndex = 13;
             this.cbxGender.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbxGender.TextChanged += new System.EventHandler(this.cbxGender_TextChanged);
             // 
-            // picBoxUser
+            // pictBoxUser
             // 
-            this.picBoxUser.Image = global::DBPROJECT.Properties.Resources.group_png_3236;
-            this.picBoxUser.Location = new System.Drawing.Point(197, 14);
-            this.picBoxUser.Name = "picBoxUser";
-            this.picBoxUser.Size = new System.Drawing.Size(255, 269);
-            this.picBoxUser.TabIndex = 17;
-            this.picBoxUser.TabStop = false;
+            this.pictBoxUser.Image = global::DBPROJECT.Properties.Resources.group_png_3236;
+            this.pictBoxUser.Location = new System.Drawing.Point(197, 14);
+            this.pictBoxUser.Name = "pictBoxUser";
+            this.pictBoxUser.Size = new System.Drawing.Size(255, 269);
+            this.pictBoxUser.TabIndex = 17;
+            this.pictBoxUser.TabStop = false;
             // 
             // btnRefresh
             // 
@@ -174,6 +179,7 @@ namespace DBPROJECT
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnChangePwd
             // 
@@ -197,6 +203,7 @@ namespace DBPROJECT
             this.btnSave.Text = "Save";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClear
             // 
@@ -221,14 +228,14 @@ namespace DBPROJECT
             this.btnLoadPhoto.Text = "Load New Photo";
             this.btnLoadPhoto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLoadPhoto.UseVisualStyleBackColor = true;
-            this.btnLoadPhoto.Click += new System.EventHandler(this.button1_Click);
+            this.btnLoadPhoto.Click += new System.EventHandler(this.btnLoadPhoto_Click);
             // 
             // frmUserProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 617);
-            this.Controls.Add(this.picBoxUser);
+            this.Controls.Add(this.pictBoxUser);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnChangePwd);
             this.Controls.Add(this.btnSave);
@@ -249,8 +256,9 @@ namespace DBPROJECT
             this.Name = "frmUserProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User Profile";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmUserProfile_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictBoxUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,6 +283,6 @@ namespace DBPROJECT
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnChangePwd;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.PictureBox picBoxUser;
+        private System.Windows.Forms.PictureBox pictBoxUser;
     }
 }
